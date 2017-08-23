@@ -6,7 +6,7 @@ cd /paddle/build
 export CPLUS_INCLUDE_PATH=/usr/include/:$CPLUS_INCLUDE_PATH
 cmake .. -DWITH_GPU=OFF -DPYTHON_EXECUTABLE=/opt/python/bin/python \
 	-DPYTHON_LIBRARY=/opt/python/lib/libpython2.7.a\
-	-DWITH_MKLDNN=OFF -DCMAKE_EXE_LINKER_FLAGS='-lutil'
+	-DWITH_MKLDNN=OFF -DWITH_TEST=OFF -DCMAKE_EXE_LINKER_FLAGS='-lutil'
 make -j `nproc` 2>&1 | tee -a /paddle_dist/build.log
 make DESTDIR=/paddle_dist -j `nproc` install 2>&1 | tee -a /paddle_dist/build.log
 cp -r /opt/python /paddle_dist/
