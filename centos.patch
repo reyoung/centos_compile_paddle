@@ -1,0 +1,12 @@
+diff --git build.sh build.sh
+index 914e4a4..0456f0a 100755
+--- build.sh
++++ build.sh
+@@ -7,6 +7,7 @@ mkdir -p dist
+ DEST=$PWD/dist
+ cd cpython
+ ./configure --enable-shared=no --with-threads --prefix=$DEST CFLAGS=-fPIC CXXFLAGS=-fPIC
++sed -r 's,#zlib (.*),zlib \1,g' ./Modules/Setup
+ make -j `nproc`
+ make  install
+ cd ../dist

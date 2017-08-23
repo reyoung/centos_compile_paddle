@@ -1,0 +1,3 @@
+[submodule "CompilePython27"]
+	path = CompilePython27
+	url = https://github.com/reyoung/CompilePython27.git
